@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+//Really Thought is would be fun to use a Nerf Herding reference for Han Solos problem to solve.
+//In the end, this problem presented some gaps in my understanding that pushed me ahead a little.
+//Much of my interaction with software in the past have always tried to consider what-ifs?
+//I approached this problem with the same set of considerations
+//The Extras are the while and if, the scanner and int stuff should definitely be in line with your expectations
+public class NerfHerding {
+    public static void main(String[] args) {
+        //Introduction to Hans Solos Herding needs.
+        System.out.printf("Hello,\nHan Solo needs your help counting nerfs\nas they move the the corral chute.\n ");
+        System.out.printf("Han has 10,000 Nerfs to count before going to Mos Eisley Cantina for a meeting\n so he thinks you and your big Droid Brain can help.\n ");
+        System.out.printf("Nerfs are really fast!\n How many do you think you can count before your Droid Brain exploids??\n ");
+//Scanner line looking for user input of a number only, this was a challenging study, but understood to be so necessary
+//Establishes the string Herd as an integer.
+        Scanner keyboard = new Scanner(System.in);
+        int Herd;
+//Creating the ability to kick out a bad input value.  Numbers Only!!
+        //Checked out some Youtube video and online forums for this section, was already well familiar with the logic of If/Then statements
+        while (true) {
+                System.out.print("How many Nerfs?");
+                if (keyboard.hasNextInt()){
+                Herd = keyboard.nextInt();
+                //Got a little help online as to how and why to insert the break
+                break;
+                //the else statement helps to loop the input process and kickout the bad entry
+                }
+                else {
+                    System.out.println("We are not naming them, We're counting them.\n How many??");
+                    keyboard.next();
+            }
+        }
+//the actual Nerf Counting begins
+        System.out.printf("So Many Nerfs");
+//Making the connection between the integer i and the scanned user entry, and then applying the math of counting down
+        for (int i = Herd; i >= 0; i--) {
+            System.out.println(i);
+
+        }
+    }
+}
